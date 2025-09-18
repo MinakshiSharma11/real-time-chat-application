@@ -14,7 +14,7 @@ const ProfilePage = () => {
    const [bio,setBio]=useState(authUser.bio)
    
 
-  const handleSubmit=async (e)=>{
+  const handleSubmit = async (e)=>{
     e.preventDefault();
     if(!selectedImg){
       await updateProfile({fullName: name, bio});
@@ -52,7 +52,7 @@ const ProfilePage = () => {
            </button>
         </form>
         <img className={`max-w-44 aspect-square rounded-full mx-10 max-sm:mt-10 ${selectedImg && 'rounded-full'}`} 
-        src={authUser.profilePic ||assets.logo_icon} alt="" />
+        src={authUser?.profilePic || assets.logo_icon} alt="" />
        </div>
     </div>
   )
